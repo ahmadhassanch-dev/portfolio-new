@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { 
   ExternalLink, 
   Github, 
@@ -26,14 +27,15 @@ const Projects = () => {
       colorClass: "purple"
     },
     {
-      title: "Next.js E-Commerce Platform",
-      description: "A modern, full-stack e-commerce solution with real-time inventory, payment integration, and advanced analytics dashboard.",
-      technologies: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Stripe"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      title: "E-Commerce Store with Fake API",
+      description: "A modern e-commerce platform built with Next.js, featuring product catalog, shopping cart, and checkout functionality using a fake API for demonstration.",
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "REST API"],
+      github: "https://github.com/bilalpiaic/ecommerce",
+      demo: "https://e-commerce-fakeapi-ehle.vercel.app/",
       category: "Web Dev",
       icon: Globe,
-      colorClass: "blue"
+      colorClass: "blue",
+      image: "/e-commercePic.png"
     },
     {
       title: "AI Code Generator",
@@ -121,7 +123,18 @@ const Projects = () => {
               <div key={project.title} className={styles.projectCard}>
                 {/* Project Image */}
                 <div className={`${styles.projectImage} ${styles[project.colorClass]}`}>
-                  <ProjectIcon className={styles.projectIcon} />
+                  {project.image ? (
+                    <Image 
+                      src={project.image} 
+                      alt={project.title}
+                      width={400}
+                      height={225}
+                      className={styles.actualProjectImage}
+                      priority={index === 0}
+                    />
+                  ) : (
+                    <ProjectIcon className={styles.projectIcon} />
+                  )}
                   <div className={`${styles.categoryBadge} ${styles[project.colorClass]}`}>
                     <ProjectIcon className={styles.badgeIcon} />
                   </div>
