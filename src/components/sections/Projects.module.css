@@ -1,0 +1,357 @@
+.projects {
+  padding: 80px 0;
+  background: rgba(15, 23, 42, 0.5);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 3rem;
+  }
+}
+
+.titleHighlight {
+  background: linear-gradient(to right, #60a5fa, #22d3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #9ca3af;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.filterWrapper {
+  background: rgba(30, 41, 59, 0.5);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  padding: 0.5rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  display: flex;
+  gap: 0.25rem;
+}
+
+.filterButton {
+  padding: 0.5rem 1.5rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filterButton.active {
+  background: #3b82f6;
+  color: white;
+  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
+
+.filterButton.inactive {
+  background: transparent;
+  color: #9ca3af;
+}
+
+.filterButton.inactive:hover {
+  color: white;
+  background: rgba(71, 85, 105, 0.5);
+}
+
+.projectsGrid {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.projectCard {
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(71, 85, 105, 0.5);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.projectImage {
+  height: 192px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectImage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.2;
+}
+
+.projectImage.purple::before {
+  background: linear-gradient(to bottom right, #8b5cf6, #ec4899);
+}
+
+.projectImage.blue::before {
+  background: linear-gradient(to bottom right, #3b82f6, #06b6d4);
+}
+
+.projectImage.green::before {
+  background: linear-gradient(to bottom right, #10b981, #059669);
+}
+
+.projectImage.orange::before {
+  background: linear-gradient(to bottom right, #f97316, #ef4444);
+}
+
+.projectImage.violet::before {
+  background: linear-gradient(to bottom right, #8b5cf6, #a855f7);
+}
+
+.projectImage.cyan::before {
+  background: linear-gradient(to bottom right, #06b6d4, #3b82f6);
+}
+
+.projectIcon {
+  width: 80px;
+  height: 80px;
+  color: white;
+  opacity: 0.8;
+  z-index: 1;
+  position: relative;
+}
+
+.categoryBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  opacity: 0.9;
+  z-index: 2;
+}
+
+.categoryBadge.purple {
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+}
+
+.categoryBadge.blue {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+}
+
+.categoryBadge.green {
+  background: linear-gradient(to right, #10b981, #059669);
+}
+
+.categoryBadge.orange {
+  background: linear-gradient(to right, #f97316, #ef4444);
+}
+
+.categoryBadge.violet {
+  background: linear-gradient(to right, #8b5cf6, #a855f7);
+}
+
+.categoryBadge.cyan {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+
+.badgeIcon {
+  width: 20px;
+  height: 20px;
+  color: white;
+}
+
+.projectContent {
+  padding: 1.5rem;
+}
+
+.contentHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.categoryLabel {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: white;
+}
+
+.categoryLabel.purple {
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+}
+
+.categoryLabel.blue {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+}
+
+.categoryLabel.green {
+  background: linear-gradient(to right, #10b981, #059669);
+}
+
+.categoryLabel.orange {
+  background: linear-gradient(to right, #f97316, #ef4444);
+}
+
+.categoryLabel.violet {
+  background: linear-gradient(to right, #8b5cf6, #a855f7);
+}
+
+.categoryLabel.cyan {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+
+.projectTitle {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.projectCard:hover .projectTitle {
+  color: #60a5fa;
+}
+
+.projectDescription {
+  color: #9ca3af;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.techList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  padding: 0.25rem 0.5rem;
+  background: rgba(30, 41, 59, 0.5);
+  color: #d1d5db;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+  border: 1px solid rgba(71, 85, 105, 0.5);
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.actionButton {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+.codeButton {
+  border: 1px solid #475569;
+  color: #d1d5db;
+  background: transparent;
+}
+
+.codeButton:hover {
+  background: #334155;
+  color: white;
+}
+
+.demoButton {
+  background: #2563eb;
+  color: white;
+}
+
+.demoButton:hover {
+  background: #1d4ed8;
+}
+
+.buttonIcon {
+  width: 16px;
+  height: 16px;
+}
+
+.viewMoreSection {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.viewMoreButton {
+  border: 2px solid #60a5fa;
+  color: #60a5fa;
+  background: transparent;
+  padding: 0.75rem 2rem;
+  border-radius: 9999px;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.viewMoreButton:hover {
+  background: #60a5fa;
+  color: white;
+  transform: scale(1.05);
+}
