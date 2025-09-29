@@ -31,7 +31,7 @@ const Projects = () => {
       title: "E-Commerce Store with Fake API",
       description: "A modern e-commerce platform built with Next.js, featuring product catalog, shopping cart, and checkout functionality using a fake API for demonstration.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "REST API"],
-      github: "https://github.com/bilalpiaic/ecommerce",
+      github: "https://github.com/ahmadhassanch-dev/e-commerce",
       demo: "https://e-commerce-fakeapi-ehle.vercel.app/",
       category: "Web Dev",
       icon: Globe,
