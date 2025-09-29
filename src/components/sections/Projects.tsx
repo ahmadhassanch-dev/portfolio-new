@@ -17,14 +17,15 @@ import styles from './Projects.module.css'
 const Projects = () => {
   const projects = [
     {
-      title: "AI-Powered Chat Assistant",
-      description: "An intelligent chatbot built with LangChain and OpenAI, featuring conversation memory, context awareness, and multi-modal capabilities.",
-      technologies: ["Python", "LangChain", "OpenAI", "FastAPI", "React"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      title: "AI Chatbot",
+      description: "An intelligent conversational AI chatbot built with modern technologies, featuring real-time responses, natural language processing, and user-friendly interface.",
+      technologies: ["React", "TypeScript", "OpenAI API", "Next.js"],
+      github: "https://github.com/ahmadhassanch-dev/ai-chatbot",
+      demo: "https://ai-chatbot-a61v.vercel.app/",
       category: "AI/ML",
       icon: Brain,
-      colorClass: "purple"
+      colorClass: "purple",
+      image: "/chatbot.png"
     },
     {
       title: "E-Commerce Store with Fake API",
