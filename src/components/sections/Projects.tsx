@@ -40,13 +40,14 @@ const Projects = () => {
     },
     {
       title: "AI Code Generator",
-      description: "An intelligent code generation tool that understands natural language and generates optimized code in multiple programming languages.",
-      technologies: ["Python", "OpenAI", "LangGraph", "Streamlit"],
-      github: "https://github.com",
-      demo: "https://demo.com",
+      description: "An intelligent code generation tool that understands natural language and generates optimized code in multiple programming languages with real-time preview.",
+      technologies: ["React", "TypeScript", "OpenAI API", "Next.js"],
+      github: "https://github.com/ahmadhassanch-dev/code-generator",
+      demo: "https://code-generator-weld.vercel.app/",
       category: "AI/ML",
       icon: Code,
-      colorClass: "green"
+      colorClass: "green",
+      image: "/code-generator.png"
     },
     {
       title: "Real-time Analytics Dashboard",
