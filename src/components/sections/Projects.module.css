@@ -1,6 +1,6 @@
 .projects {
   padding: 80px 0;
-  background: rgba(15, 23, 42, 0.5);
+  background: #ffffff;
 }
 
 .container {
@@ -17,7 +17,7 @@
 .title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .titleHighlight {
-  background: linear-gradient(to right, #60a5fa, #22d3ee);
+  background: linear-gradient(to right, #00bcd4, #26c6da);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,7 +36,7 @@
 
 .subtitle {
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: #666;
   max-width: 768px;
   margin: 0 auto;
 }
@@ -48,13 +48,14 @@
 }
 
 .filterWrapper {
-  background: rgba(30, 41, 59, 0.5);
+  background: #ffffff;
   backdrop-filter: blur(8px);
   border-radius: 9999px;
   padding: 0.5rem;
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 2px solid #f0f0f0;
   display: flex;
   gap: 0.25rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .filterButton {
@@ -68,19 +69,19 @@
 }
 
 .filterButton.active {
-  background: #3b82f6;
+  background: #00bcd4;
   color: white;
-  box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 4px 8px rgba(0, 188, 212, 0.3);
 }
 
 .filterButton.inactive {
   background: transparent;
-  color: #9ca3af;
+  color: #666;
 }
 
 .filterButton.inactive:hover {
-  color: white;
-  background: rgba(71, 85, 105, 0.5);
+  color: #1a1a1a;
+  background: rgba(0, 188, 212, 0.1);
 }
 
 .projectsGrid {
@@ -102,22 +103,27 @@
 }
 
 .projectCard {
-  background: rgba(15, 23, 42, 0.5);
+  position: relative;
+  background: #ffffff;
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 2px solid #f0f0f0;
   border-radius: 1rem;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  height: 280px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .projectCard:hover {
-  transform: translateY(-4px) scale(1.02);
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-8px);
+  border-color: #00bcd4;
+  box-shadow: 0 20px 40px rgba(0, 188, 212, 0.2), 0 0 30px rgba(0, 188, 212, 0.1);
+  height: 380px;
 }
 
 .projectImage {
-  height: 192px;
+  height: 220px;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -125,11 +131,16 @@
   justify-content: center;
 }
 
+.projectCard:hover .projectImage {
+  height: 180px;
+}
+
 .projectImage::before {
   content: '';
   position: absolute;
   inset: 0;
-  opacity: 0.2;
+  opacity: 0.15;
+  z-index: 1;
 }
 
 .projectImage.purple::before {
@@ -161,7 +172,7 @@
   height: 80px;
   color: white;
   opacity: 0.8;
-  z-index: 1;
+  z-index: 2;
   position: relative;
 }
 
@@ -170,7 +181,13 @@
   height: 100%;
   object-fit: cover;
   position: relative;
-  z-index: 1;
+  z-index: 2;
+  transition: all 0.4s ease;
+}
+
+.projectCard:hover .actualProjectImage {
+  transform: scale(1.05);
+  filter: brightness(0.8);
 }
 
 .categoryBadge {
@@ -180,7 +197,47 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   opacity: 0.9;
-  z-index: 2;
+  z-index: 4;
+  transition: all 0.3s ease;
+}
+
+.projectCard:hover .categoryBadge {
+  opacity: 0.7;
+}
+
+/* Animated Emoji */
+.emojiContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.projectEmoji {
+  font-size: 3.5rem;
+  opacity: 0;
+  transform: scale(0.5) rotate(0deg);
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: inline-block;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.projectCard:hover .projectEmoji {
+  opacity: 0.9;
+  transform: scale(1) rotate(360deg);
+  animation: bounce 0.6s ease-in-out 0.3s;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: scale(1) rotate(360deg); }
+  50% { transform: scale(1.2) rotate(360deg); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 .categoryBadge.purple {
@@ -213,128 +270,95 @@
   color: white;
 }
 
+/* Bottom Content Section */
 .projectContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  backdrop-filter: blur(12px);
+  border-top: 2px solid #f0f0f0;
+  padding: 1rem;
+  height: 60px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.projectCard:hover .projectContent {
+  height: 220px;
   padding: 1.5rem;
+  border-top-color: #00bcd4;
+  box-shadow: 0 -10px 20px rgba(0, 188, 212, 0.1);
 }
 
-.contentHeader {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.75rem;
-}
-
-.categoryLabel {
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: white;
-}
-
-.categoryLabel.purple {
-  background: linear-gradient(to right, #8b5cf6, #ec4899);
-}
-
-.categoryLabel.blue {
-  background: linear-gradient(to right, #3b82f6, #06b6d4);
-}
-
-.categoryLabel.green {
-  background: linear-gradient(to right, #10b981, #059669);
-}
-
-.categoryLabel.orange {
-  background: linear-gradient(to right, #f97316, #ef4444);
-}
-
-.categoryLabel.violet {
-  background: linear-gradient(to right, #8b5cf6, #a855f7);
-}
-
-.categoryLabel.cyan {
-  background: linear-gradient(to right, #06b6d4, #3b82f6);
+/* E-commerce project specific styling for more height */
+.ecommerceCard:hover .projectContent {
+  height: 270px;
 }
 
 .projectTitle {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: white;
-  margin-bottom: 0.75rem;
-  transition: color 0.3s ease;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition: all 0.3s ease;
 }
 
 .projectCard:hover .projectTitle {
-  color: #60a5fa;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  white-space: normal;
+  overflow: visible;
+  color: #00bcd4;
+}
+
+.expandedContent {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease 0.1s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.projectCard:hover .expandedContent {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .projectDescription {
-  color: #9ca3af;
-  font-size: 0.875rem;
-  line-height: 1.6;
+  color: #666;
+  font-size: 0.9rem;
+  line-height: 1.5;
   margin-bottom: 1rem;
 }
 
 .techList {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
 }
 
 .techTag {
-  padding: 0.25rem 0.5rem;
-  background: rgba(30, 41, 59, 0.5);
-  color: #d1d5db;
+  padding: 0.25rem 0.6rem;
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
   font-size: 0.75rem;
   border-radius: 0.5rem;
-  border: 1px solid rgba(71, 85, 105, 0.5);
-}
-
-.actionButtons {
-  display: flex;
-  gap: 0.75rem;
-}
-
-.actionButton {
-  flex: 1;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
+  border: 1px solid rgba(0, 188, 212, 0.2);
   font-weight: 500;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-}
-
-.codeButton {
-  border: 1px solid #475569;
-  color: #d1d5db;
-  background: transparent;
-}
-
-.codeButton:hover {
-  background: #334155;
-  color: white;
-}
-
-.demoButton {
-  background: #2563eb;
-  color: white;
-}
-
-.demoButton:hover {
-  background: #1d4ed8;
 }
 
 .buttonIcon {
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s ease;
 }
 
 .viewMoreSection {
@@ -342,10 +366,18 @@
   margin-top: 3rem;
 }
 
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .viewMoreButton {
-  border: 2px solid #60a5fa;
-  color: #60a5fa;
-  background: transparent;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+  background: #ffffff;
   padding: 0.75rem 2rem;
   border-radius: 9999px;
   font-size: 1.125rem;
@@ -356,10 +388,100 @@
   gap: 0.5rem;
   transition: all 0.3s ease;
   cursor: pointer;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.2);
 }
 
 .viewMoreButton:hover {
-  background: #60a5fa;
+  background: #00bcd4;
   color: white;
   transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.4), 0 0 20px rgba(0, 188, 212, 0.2);
+}
+
+.liveProjectsButton {
+  position: relative;
+}
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.chevronIcon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.3s ease;
+}
+
+.chevronIcon.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 0.5rem;
+  background: #ffffff;
+  border: 2px solid #00bcd4;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.3);
+  z-index: 1000;
+  min-width: 300px;
+  overflow: hidden;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdownItem:last-child {
+  border-bottom: none;
+}
+
+.dropdownItem:hover {
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
+  padding-left: 2rem;
+}
+
+.dropdownItem .projectEmoji {
+  font-size: 1.5rem;
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+.dropdownIcon {
+  width: 16px;
+  height: 16px;
+  margin-left: auto;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.dropdownItem:hover .dropdownIcon {
+  opacity: 1;
+  transform: translateX(4px);
 }

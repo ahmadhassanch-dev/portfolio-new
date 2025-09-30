@@ -1,6 +1,6 @@
 .about {
   padding: 80px 0;
-  background: rgba(30, 41, 59, 0.3);
+  background: #ffffff;
 }
 
 .container {
@@ -17,7 +17,7 @@
 .title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .titleHighlight {
-  background: linear-gradient(to right, #60a5fa, #22d3ee);
+  background: linear-gradient(to right, #00bcd4, #26c6da);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,7 +36,7 @@
 
 .subtitle {
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: #666;
   max-width: 768px;
   margin: 0 auto;
 }
@@ -59,18 +59,19 @@
 }
 
 .profileCard {
-  background: rgba(30, 41, 59, 0.5);
+  background: #ffffff;
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 2px solid #f0f0f0;
   border-radius: 1rem;
   padding: 2rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .profileCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: #00bcd4;
+  box-shadow: 0 10px 40px rgba(0, 188, 212, 0.15);
 }
 
 .profileHeader {
@@ -84,7 +85,7 @@
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #60a5fa, #22d3ee);
+  background: linear-gradient(135deg, #00bcd4, #26c6da);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -96,18 +97,18 @@
 .profileInfo h3 {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin: 0;
 }
 
 .profileInfo p {
-  color: #60a5fa;
+  color: #00bcd4;
   margin: 0;
   font-weight: 500;
 }
 
 .profileText {
-  color: #d1d5db;
+  color: #666;
   line-height: 1.6;
   font-size: 1rem;
 }
@@ -125,30 +126,31 @@
 }
 
 .statCard {
-  background: rgba(30, 41, 59, 0.5);
+  background: #ffffff;
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 2px solid #f0f0f0;
   border-radius: 1rem;
   padding: 1.5rem;
   text-align: center;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .statCard:hover {
   transform: translateY(-4px);
-  border-color: rgba(59, 130, 246, 0.3);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: #00bcd4;
+  box-shadow: 0 10px 40px rgba(0, 188, 212, 0.15);
 }
 
 .statNumber {
   font-size: 2rem;
   font-weight: bold;
-  color: #60a5fa;
+  color: #00bcd4;
   margin-bottom: 0.5rem;
 }
 
 .statLabel {
-  color: #9ca3af;
+  color: #666;
   font-size: 0.875rem;
   font-weight: 500;
 }
@@ -159,17 +161,19 @@
 }
 
 .infoCard {
-  background: rgba(30, 41, 59, 0.5);
+  background: #ffffff;
   backdrop-filter: blur(16px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 2px solid #f0f0f0;
   border-radius: 1rem;
   padding: 1.5rem;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
 }
 
 .infoCard:hover {
   transform: translateY(-2px);
-  border-color: rgba(59, 130, 246, 0.3);
+  border-color: #00bcd4;
+  box-shadow: 0 10px 30px rgba(0, 188, 212, 0.1);
 }
 
 .infoHeader {
@@ -181,18 +185,18 @@
 
 .infoIcon {
   padding: 0.5rem;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(0, 188, 212, 0.1);
   border-radius: 0.5rem;
-  color: #60a5fa;
+  color: #00bcd4;
 }
 
 .infoTitle {
   font-weight: 600;
-  color: white;
+  color: #1a1a1a;
   margin: 0;
 }
 
 .infoText {
-  color: #d1d5db;
-  margin: 0;
+  color: #666;
+  line-height: 1.5;
 }

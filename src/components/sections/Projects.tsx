@@ -10,7 +10,8 @@ import {
   Bot,
   Code,
   Database,
-  Sparkles
+  Sparkles,
+  ChevronDown
 } from 'lucide-react'
 import styles from './Projects.module.css'
 
@@ -25,18 +26,20 @@ const Projects = () => {
       category: "AI/ML",
       icon: Brain,
       colorClass: "purple",
-      image: "/chatbot.png"
+      image: "/chatbot.png",
+      emoji: "🤖"
     },
     {
       title: "E-Commerce Store with Fake API",
       description: "A modern e-commerce platform built with Next.js, featuring product catalog, shopping cart, and checkout functionality using a fake API for demonstration.",
       technologies: ["Next.js", "TypeScript", "Tailwind CSS", "REST API"],
-      github: "https://github.com/ahmadhassanch-dev/e-commerce",
+      github: "https://github.com/ahmadhassanch-dev/e-commerce-fakeapi",
       demo: "https://e-commerce-fakeapi-ehle.vercel.app/",
       category: "Web Dev",
       icon: Globe,
       colorClass: "blue",
-      image: "/e-commercePic.png"
+      image: "/e-commercePic.png",
+      emoji: "🛒"
     },
     {
       title: "AI Code Generator",
@@ -47,42 +50,14 @@ const Projects = () => {
       category: "AI/ML",
       icon: Code,
       colorClass: "green",
-      image: "/code-generator.png"
-    },
-    {
-      title: "Real-time Analytics Dashboard",
-      description: "A comprehensive dashboard for tracking user behavior, system performance, and business metrics with real-time updates.",
-      technologies: ["React", "Node.js", "Socket.io", "MongoDB", "Chart.js"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      category: "Web Dev",
-      icon: Database,
-      colorClass: "orange"
-    },
-    {
-      title: "Multi-Agent AI System",
-      description: "A sophisticated multi-agent system using LangGraph for complex task orchestration and autonomous decision-making.",
-      technologies: ["Python", "LangGraph", "OpenAI", "Redis", "Docker"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      category: "AI/ML",
-      icon: Bot,
-      colorClass: "violet"
-    },
-    {
-      title: "Smart Portfolio Website",
-      description: "This very portfolio website built with modern technologies, featuring animations, responsive design, and optimized performance.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com",
-      demo: "https://demo.com",
-      category: "Web Dev",
-      icon: Sparkles,
-      colorClass: "cyan"
+      image: "/code-generator.png",
+      emoji: "⚡"
     }
   ]
 
   const categories = ["All", "AI/ML", "Web Dev"]
   const [activeCategory, setActiveCategory] = useState("All")
+  const [isLiveDropdownOpen, setIsLiveDropdownOpen] = useState(false)
 
   const filteredProjects = activeCategory === "All" 
     ? projects 
@@ -122,7 +97,7 @@ const Projects = () => {
           {filteredProjects.map((project, index) => {
             const ProjectIcon = project.icon
             return (
-              <div key={project.title} className={styles.projectCard}>
+              <div key={project.title} className={`${styles.projectCard} ${project.title.includes("E-Commerce") ? styles.ecommerceCard : ""}`}>
                 {/* Project Image */}
                 <div className={`${styles.projectImage} ${styles[project.colorClass]}`}>
                   {project.image ? (
@@ -130,63 +105,44 @@ const Projects = () => {
                       src={project.image} 
                       alt={project.title}
                       width={400}
-                      height={225}
+                      height={280}
                       className={styles.actualProjectImage}
                       priority={index === 0}
                     />
                   ) : (
                     <ProjectIcon className={styles.projectIcon} />
                   )}
+                  
+                  {/* Animated Emoji */}
+                  <div className={styles.emojiContainer}>
+                    <span className={styles.projectEmoji}>{project.emoji}</span>
+                  </div>
+
                   <div className={`${styles.categoryBadge} ${styles[project.colorClass]}`}>
                     <ProjectIcon className={styles.badgeIcon} />
                   </div>
                 </div>
 
-                {/* Project Content */}
+                {/* Bottom Content that expands on hover */}
                 <div className={styles.projectContent}>
-                  <div className={styles.contentHeader}>
-                    <span className={`${styles.categoryLabel} ${styles[project.colorClass]}`}>
-                      {project.category}
-                    </span>
-                  </div>
-                  
                   <h3 className={styles.projectTitle}>
                     {project.title}
                   </h3>
-                  
-                  <p className={styles.projectDescription}>
-                    {project.description}
-                  </p>
 
-                  {/* Technologies */}
-                  <div className={styles.techList}>
-                    {project.technologies.map((tech) => (
-                      <span key={tech} className={styles.techTag}>
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+                  {/* Content that appears on hover */}
+                  <div className={styles.expandedContent}>
+                    <p className={styles.projectDescription}>
+                      {project.description}
+                    </p>
 
-                  {/* Action Buttons */}
-                  <div className={styles.actionButtons}>
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className={`${styles.actionButton} ${styles.codeButton}`}
-                    >
-                      <Github className={styles.buttonIcon} />
-                      Code
-                    </a>
-                    <a 
-                      href={project.demo} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className={`${styles.actionButton} ${styles.demoButton}`}
-                    >
-                      <ExternalLink className={styles.buttonIcon} />
-                      Demo
-                    </a>
+                    {/* Technologies */}
+                    <div className={styles.techList}>
+                      {project.technologies.map((tech) => (
+                        <span key={tech} className={styles.techTag}>
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -196,10 +152,39 @@ const Projects = () => {
 
         {/* View More Projects */}
         <div className={styles.viewMoreSection}>
-          <a href="#" className={styles.viewMoreButton}>
-            <Github className={styles.buttonIcon} />
-            View All Projects on GitHub
-          </a>
+          <div className={styles.buttonGroup}>
+            <a href="https://github.com/ahmadhassanch-dev?tab=repositories" className={styles.viewMoreButton}>
+              <Github className={styles.buttonIcon} />
+              See All Projects
+            </a>
+            <div className={styles.dropdownContainer}>
+              <button 
+                onClick={() => setIsLiveDropdownOpen(!isLiveDropdownOpen)}
+                className={`${styles.viewMoreButton} ${styles.liveProjectsButton}`}
+              >
+                <ExternalLink className={styles.buttonIcon} />
+                See Live Projects
+                <ChevronDown className={`${styles.chevronIcon} ${isLiveDropdownOpen ? styles.rotated : ''}`} />
+              </button>
+              {isLiveDropdownOpen && (
+                <div className={styles.dropdownMenu}>
+                  {projects.map((project) => (
+                    <a
+                      key={project.title}
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.dropdownItem}
+                    >
+                      <span className={styles.projectEmoji}>{project.emoji}</span>
+                      <span>{project.title}</span>
+                      <ExternalLink className={styles.dropdownIcon} />
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>

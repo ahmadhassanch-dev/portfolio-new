@@ -1,6 +1,6 @@
 .contact {
   padding: 80px 0;
-  background: rgba(30, 41, 59, 0.3);
+  background: #ffffff;
 }
 
 .container {
@@ -17,7 +17,7 @@
 .title {
   font-size: 2.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .titleHighlight {
-  background: linear-gradient(to right, #60a5fa, #22d3ee);
+  background: linear-gradient(to right, #00bcd4, #26c6da);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -36,7 +36,7 @@
 
 .subtitle {
   font-size: 1.25rem;
-  color: #9ca3af;
+  color: #666;
   max-width: 768px;
   margin: 0 auto;
 }
@@ -65,12 +65,12 @@
 .infoTitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1.5rem;
 }
 
 .infoDescription {
-  color: #9ca3af;
+  color: #666;
   font-size: 1.125rem;
   line-height: 1.6;
 }
@@ -96,18 +96,18 @@
 }
 
 .emailIcon {
-  background: rgba(59, 130, 246, 0.1);
-  color: #60a5fa;
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
 }
 
 .phoneIcon {
-  background: rgba(34, 197, 94, 0.1);
-  color: #22c55e;
+  background: rgba(38, 198, 218, 0.1);
+  color: #26c6da;
 }
 
 .locationIcon {
-  background: rgba(168, 85, 247, 0.1);
-  color: #a855f7;
+  background: rgba(0, 188, 212, 0.1);
+  color: #00bcd4;
 }
 
 .contactText {
@@ -116,13 +116,13 @@
 }
 
 .contactLabel {
-  color: #9ca3af;
+  color: #666;
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
 }
 
 .contactValue {
-  color: white;
+  color: #1a1a1a;
   font-weight: 500;
 }
 
@@ -133,7 +133,7 @@
 .socialTitle {
   font-size: 1.125rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
@@ -144,13 +144,14 @@
 
 .socialLink {
   padding: 0.75rem;
-  background: rgba(30, 41, 59, 0.5);
+  background: #ffffff;
   border-radius: 0.75rem;
-  color: #9ca3af;
+  color: #666;
   text-decoration: none;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .socialLink:hover {
@@ -158,37 +159,38 @@
 }
 
 .socialLink.github:hover {
-  color: #9ca3af;
-  border-color: rgba(156, 163, 175, 0.5);
+  color: #1a1a1a;
+  border-color: rgba(26, 26, 26, 0.3);
 }
 
 .socialLink.linkedin:hover {
-  color: #60a5fa;
-  border-color: rgba(96, 165, 250, 0.5);
+  color: #00bcd4;
+  border-color: rgba(0, 188, 212, 0.3);
 }
 
 .socialLink.twitter:hover {
-  color: #0ea5e9;
-  border-color: rgba(14, 165, 233, 0.5);
+  color: #26c6da;
+  border-color: rgba(38, 198, 218, 0.3);
 }
 
 .socialLink.discord:hover {
-  color: #818cf8;
-  border-color: rgba(129, 140, 248, 0.5);
+  color: #00bcd4;
+  border-color: rgba(0, 188, 212, 0.3);
 }
 
 .formContainer {
-  background: rgba(15, 23, 42, 0.5);
+  background: #ffffff;
   backdrop-filter: blur(8px);
   border-radius: 1rem;
   padding: 2rem;
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .formTitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1.5rem;
 }
 
@@ -215,7 +217,7 @@
 }
 
 .formLabel {
-  color: #d1d5db;
+  color: #666;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 0.5rem;
@@ -224,11 +226,11 @@
 .formInput,
 .formTextarea {
   width: 100%;
-  background: rgba(30, 41, 59, 0.5);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
   border-radius: 0.5rem;
   padding: 0.75rem 1rem;
-  color: white;
+  color: #1a1a1a;
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
@@ -236,12 +238,12 @@
 .formInput:focus,
 .formTextarea:focus {
   outline: none;
-  border-color: #3b82f6;
+  border-color: #00bcd4;
 }
 
 .formInput::placeholder,
 .formTextarea::placeholder {
-  color: #9ca3af;
+  color: #999;
 }
 
 .formTextarea {
@@ -251,7 +253,7 @@
 
 .submitButton {
   width: 100%;
-  background: #2563eb;
+  background: #00bcd4;
   color: white;
   font-weight: 600;
   padding: 0.75rem;
@@ -266,7 +268,7 @@
 }
 
 .submitButton:hover {
-  background: #1d4ed8;
+  background: #26c6da;
   transform: scale(1.05);
 }
 
@@ -279,23 +281,23 @@
   text-align: center;
   margin-top: 4rem;
   padding-top: 3rem;
-  border-top: 1px solid rgba(71, 85, 105, 0.5);
+  border-top: 1px solid #f0f0f0;
 }
 
 .ctaTitle {
   font-size: 1.5rem;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   margin-bottom: 1rem;
 }
 
 .ctaDescription {
-  color: #9ca3af;
+  color: #666;
   margin-bottom: 1.5rem;
 }
 
 .ctaButton {
-  background: linear-gradient(to right, #2563eb, #0891b2);
+  background: linear-gradient(to right, #00bcd4, #26c6da);
   color: white;
   padding: 0.75rem 2rem;
   border-radius: 9999px;
@@ -309,6 +311,6 @@
 }
 
 .ctaButton:hover {
-  background: linear-gradient(to right, #1d4ed8, #0e7490);
+  background: linear-gradient(to right, #26c6da, #4dd0e1);
   transform: scale(1.05);
 }

@@ -11,7 +11,7 @@
 .backgroundGradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #ffffff 100%);
 }
 
 .backgroundElements {
@@ -31,7 +31,7 @@
   left: 80px;
   width: 288px;
   height: 288px;
-  background: rgba(59, 130, 246, 0.1);
+  background: rgba(0, 188, 212, 0.05);
 }
 
 .element2 {
@@ -39,7 +39,7 @@
   right: 80px;
   width: 384px;
   height: 384px;
-  background: rgba(147, 51, 234, 0.1);
+  background: rgba(0, 188, 212, 0.08);
   animation-delay: 2s;
 }
 
@@ -49,7 +49,7 @@
   transform: translate(-50%, -50%);
   width: 320px;
   height: 320px;
-  background: rgba(6, 182, 212, 0.05);
+  background: rgba(0, 188, 212, 0.03);
   animation-delay: 4s;
 }
 
@@ -94,7 +94,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  color: #60a5fa;
+  color: #00bcd4;
 }
 
 .sparkle {
@@ -125,11 +125,11 @@
 }
 
 .firstName {
-  color: white;
+  color: #1a1a1a;
 }
 
 .lastName {
-  background: linear-gradient(135deg, #60a5fa 0%, #22d3ee 100%);
+  background: linear-gradient(135deg, #00bcd4 0%, #26c6da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -143,7 +143,7 @@
 
 .ageText {
   font-size: 20px;
-  color: #d1d5db;
+  color: #666;
 }
 
 @media (min-width: 640px) {
@@ -153,14 +153,14 @@
 }
 
 .ageHighlight {
-  color: #60a5fa;
+  color: #00bcd4;
   font-weight: 600;
 }
 
 .typingContainer {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: #1a1a1a;
   min-height: 60px;
   display: flex;
   align-items: center;
@@ -181,7 +181,7 @@
 
 .cursor {
   animation: pulse 1s infinite;
-  color: #60a5fa;
+  color: #00bcd4;
 }
 
 @keyframes pulse {
@@ -195,7 +195,7 @@
 
 .description {
   font-size: 18px;
-  color: #d1d5db;
+  color: #666;
   max-width: 768px;
   margin: 0 auto;
   line-height: 1.6;
@@ -208,12 +208,12 @@
 }
 
 .techHighlight {
-  color: #60a5fa;
+  color: #00bcd4;
   font-weight: 600;
 }
 
 .webHighlight {
-  color: #22d3ee;
+  color: #26c6da;
   font-weight: 600;
 }
 
@@ -233,7 +233,7 @@
 }
 
 .primaryButton {
-  background: #2563eb;
+  background: linear-gradient(135deg, #00bcd4 0%, #26c6da 100%);
   color: white;
   padding: 12px 32px;
   border-radius: 9999px;
@@ -245,17 +245,19 @@
   gap: 8px;
   border: none;
   cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
 }
 
 .primaryButton:hover {
-  background: #1d4ed8;
+  background: linear-gradient(135deg, #26c6da 0%, #4dd0e1 100%);
   transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 188, 212, 0.5);
 }
 
 .secondaryButton {
-  border: 1px solid #60a5fa;
-  color: #60a5fa;
-  background: transparent;
+  border: 2px solid #00bcd4;
+  color: #00bcd4;
+  background: #ffffff;
   padding: 12px 32px;
   border-radius: 9999px;
   font-size: 18px;
@@ -268,9 +270,10 @@
 }
 
 .secondaryButton:hover {
-  background: #60a5fa;
+  background: #00bcd4;
   color: white;
   transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.4);
 }
 
 .buttonIcon {
@@ -288,18 +291,21 @@
 .socialLink {
   padding: 12px;
   border-radius: 50%;
-  background: rgba(30, 41, 59, 0.5);
-  color: #9ca3af;
+  background: #ffffff;
+  color: #666;
   transition: all 0.3s ease;
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(71, 85, 105, 0.5);
+  border: 2px solid #f0f0f0;
   text-decoration: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .socialLink:hover {
-  background: rgba(59, 130, 246, 0.2);
-  color: #60a5fa;
+  background: #ffffff;
+  color: #00bcd4;
   transform: scale(1.1);
+  border-color: #00bcd4;
+  box-shadow: 0 0 20px rgba(0, 188, 212, 0.2);
 }
 
 .socialIcon {
@@ -319,7 +325,7 @@
   flex-direction: column;
   align-items: center;
   gap: 8px;
-  color: #9ca3af;
+  color: #666;
 }
 
 .scrollText {
