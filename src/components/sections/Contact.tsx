@@ -96,17 +96,11 @@ const Contact = () => {
             <div className={styles.socialSection}>
               <h4 className={styles.socialTitle}>Follow Me</h4>
               <div className={styles.socialLinks}>
-                <a href="#" className={`${styles.socialLink} ${styles.github}`} aria-label="GitHub">
+                <a href="https://github.com/ahmadhassanch-dev" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.github}`} aria-label="GitHub">
                   <Github size={20} />
                 </a>
-                <a href="#" className={`${styles.socialLink} ${styles.linkedin}`} aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/ahmad-hassan-898549387/" target="_blank" rel="noopener noreferrer" className={`${styles.socialLink} ${styles.linkedin}`} aria-label="LinkedIn">
                   <Linkedin size={20} />
-                </a>
-                <a href="#" className={`${styles.socialLink} ${styles.twitter}`} aria-label="Twitter">
-                  <Twitter size={20} />
-                </a>
-                <a href="#" className={`${styles.socialLink} ${styles.discord}`} aria-label="Discord">
-                  <MessageSquare size={20} />
                 </a>
               </div>
             </div>

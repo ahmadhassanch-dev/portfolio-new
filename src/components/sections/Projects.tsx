@@ -52,18 +52,6 @@ const Projects = () => {
       colorClass: "green",
       image: "/code-generator.png",
       emoji: "⚡"
-    },
-    {
-      title: "Programming Communities",
-      description: "An online platform for developers to connect, share knowledge, and collaborate on projects within various programming communities.",
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-      github: "#",
-      demo: "https://programing-communities.vercel.app/",
-      category: "Web Dev",
-      icon: Globe,
-      colorClass: "blue",
-      image: "/image.png",
-      emoji: "👥"
     }
   ]
 

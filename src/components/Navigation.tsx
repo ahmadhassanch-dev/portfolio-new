@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import { Menu, X, Home, User, Code, Briefcase, MessageSquare } from 'lucide-react'
+import { Menu, X, Home, User, Code, Briefcase, MessageSquare, BookOpen } from 'lucide-react'
 import styles from './Navigation.module.css'
 
 const Navigation = () => {
@@ -15,6 +15,7 @@ const Navigation = () => {
     { id: 'about', label: 'About', icon: User },
     { id: 'skills', label: 'Skills', icon: Code },
     { id: 'projects', label: 'Projects', icon: Briefcase },
+    { id: 'learning', label: 'Learning', icon: BookOpen },
     { id: 'contact', label: 'Contact', icon: MessageSquare },
   ]
 

@@ -96,7 +96,15 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className={styles.buttonContainer}>
-            <button className={styles.primaryButton}>
+            <button 
+              className={styles.primaryButton}
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
               <Code className={styles.buttonIcon} />
               View My Work
             </button>
